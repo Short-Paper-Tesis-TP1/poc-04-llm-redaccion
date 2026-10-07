@@ -1,0 +1,446 @@
+{
+  "poc": "04_llm_redaccion_iteracion_2",
+  "opciones": {
+    "temperature": 0,
+    "seed": 42,
+    "num_ctx": 4096,
+    "num_predict": 1024
+  },
+  "repeticiones": 2,
+  "casos": 6,
+  "casos_al_llm": 5,
+  "factores_resueltos_por_codigo": 3,
+  "modelos": {
+    "qwen2.5:3b": {
+      "metricas": {
+        "json_valido": 1.0,
+        "cobertura": 1.0,
+        "factores_presentes": "9 / 9",
+        "citas_validas": 1.0,
+        "sin_fuente_correcto": 1.0,
+        "cifras_inventadas": 0,
+        "determinismo": 0.2,
+        "latencia_media_s": 4.1,
+        "latencia_max_s": 6.02,
+        "apto": true
+      },
+      "evaluacion": [
+        {
+          "json_valido": true,
+          "cobertura_ok": true,
+          "factores": [
+            {
+              "variable": "ratio_cuota_ingreso",
+              "presente": true,
+              "citas": [
+                "F09"
+              ],
+              "citas_validas": true,
+              "cifras_inventadas": []
+            },
+            {
+              "variable": "n_otros_creditos",
+              "presente": true,
+              "citas": [
+                "F08",
+                "F09"
+              ],
+              "citas_validas": true,
+              "cifras_inventadas": []
+            }
+          ]
+        },
+        {
+          "json_valido": true,
+          "cobertura_ok": true,
+          "factores": [
+            {
+              "variable": "atraso_historial",
+              "presente": true,
+              "citas": [
+                "F11",
+                "F12"
+              ],
+              "citas_validas": true,
+              "cifras_inventadas": []
+            }
+          ]
+        },
+        {
+          "json_valido": true,
+          "cobertura_ok": true,
+          "factores": [
+            {
+              "variable": "ratio_deuda_ingreso",
+              "presente": true,
+              "citas": [
+                "F08",
+                "F10"
+              ],
+              "citas_validas": true,
+              "cifras_inventadas": []
+            },
+            {
+              "variable": "ratio_monto_ingreso",
+              "presente": true,
+              "citas": [
+                "F10"
+              ],
+              "citas_validas": true,
+              "cifras_inventadas": []
+            },
+            {
+              "variable": "ratio_cuota_ingreso",
+              "presente": true,
+              "citas": [
+                "F09"
+              ],
+              "citas_validas": true,
+              "cifras_inventadas": []
+            }
+          ]
+        },
+        {
+          "json_valido": true,
+          "cobertura_ok": true,
+          "factores": [
+            {
+              "variable": "ratio_cuota_ingreso",
+              "presente": true,
+              "citas": [
+                "F09",
+                "F10"
+              ],
+              "citas_validas": true,
+              "cifras_inventadas": []
+            }
+          ]
+        },
+        {
+          "json_valido": true,
+          "cobertura_ok": true,
+          "factores": [
+            {
+              "variable": "n_otros_creditos",
+              "presente": true,
+              "citas": [
+                "F08"
+              ],
+              "citas_validas": true,
+              "cifras_inventadas": []
+            },
+            {
+              "variable": "atraso_historial",
+              "presente": true,
+              "citas": [
+                "F11"
+              ],
+              "citas_validas": true,
+              "cifras_inventadas": []
+            }
+          ]
+        }
+      ],
+      "respuestas": {
+        "C1": "{\n  \"recomendaciones\": [\n    {\n      \"variable\": \"ratio_cuota_ingreso\",\n      \"texto\": \"Para mantener tu deuda bajo el 30% de tu ingreso mensual, considera reducir gastos no esenciales o buscar una consolidación de tus deudas actuales. Esto te ayudará a mantener tu ratio de cuota a ingreso dentro del umbral seguro.\",\n      \"acciones\": [\n        \"Reducir gastos no esenciales\",\n        \"Consultar sobre consolidación de deudas\"\n      ],\n      \"citas\": [\n        \"F09\"\n      ]\n    },\n    {\n      \"variable\": \"n_otros_creditos\",\n      \"texto\": \"Con 4 creditos vigentes, es importante evaluar si es posible consolidarlos en uno solo. Esto no solo simplificará tu manejo de deudas, sino que también podría reducir tu costo total de financiamiento.\",\n      \"acciones\": [\n        \"Evaluar consolidación de deudas\"\n      ],\n      \"citas\": [\n        \"F08\",\n        \"F09\"\n      ]\n    }\n  ]\n}",
+        "C2": "{\n  \"recomendaciones\": [\n    {\n      \"variable\": \"atraso_historial\",\n      \"texto\": \"Si tienes atrasos en tus pagos, es importante que hagas una reprogramación de deuda lo antes posible. Esto te ayudará a mantener tu historial crediticio limpio y mejorar tu capacidad para obtener futuros créditos.\",\n      \"acciones\": [\n        \"Solicita una reprogramación de deuda antes de que caigas en mora.\",\n        \"Mantén un historial crediticio limpio y puntual en tus pagos futuros.\"\n      ],\n      \"citas\": [\n        \"F11\",\n        \"F12\"\n      ]\n    }\n  ]\n}",
+        "C3": "{\n  \"recomendaciones\": [\n    {\n      \"variable\": \"ratio_deuda_ingreso\",\n      \"texto\": \"Para mantener una gestión financiera segura, asegúrate de que tu deuda total no supere tres veces tu ingreso mensual. Si tienes múltiples deudas, considera consolidarlas para simplificar el seguimiento y reducir el costo total. Si no puedes cubrir la nueva cuota con holgura, posterga el crédito y no reduzcas el gasto esencial del hogar.\",\n      \"acciones\": [\n        \"Consolidar múltiples deudas si es posible.\",\n        \"No asumir nuevas deudas si no puedes cubrir la nueva cuota con holgura.\",\n        \"Reducir gastos no esenciales para cubrir la nueva cuota.\"\n      ],\n      \"citas\": [\n        \"F08\",\n        \"F10\"\n      ]\n    },\n    {\n      \"variable\": \"ratio_monto_ingreso\",\n      \"texto\": \"Para mantener una gestión financiera segura, asegúrate de que el monto de tu prestamo no supere cinco veces tu ingreso mensual. Si tienes múltiples deudas, considera consolidarlas para simplificar el seguimiento y reducir el costo total. Si no puedes cubrir la nueva cuota con holgura, posterga el crédito y no reduzcas el gasto esencial del hogar.\",\n      \"acciones\": [\n        \"Consolidar múltiples deudas si es posible.\",\n        \"No asumir nuevas deudas si no puedes cubrir la nueva cuota con holgura.\",\n        \"Reducir gastos no esenciales para cubrir la nueva cuota.\"\n      ],\n      \"citas\": [\n        \"F10\"\n      ]\n    },\n    {\n      \"variable\": \"ratio_cuota_ingreso\",\n      \"texto\": \"Para mantener una gestión financiera segura, asegúrate de que tu cuota no supere el 45% de tu ingreso mensual. Si tienes múltiples deudas, considera consolidarlas para simplificar el seguimiento y reducir el costo total. Si no puedes cubrir la nueva cuota con holgura, posterga el crédito y no reduzcas el gasto esencial del hogar.\",\n      \"acciones\": [\n        \"Consolidar múltiples deudas si es posible.\",\n        \"No asumir nuevas deudas si no puedes cubrir la nueva cuota con holgura.\",\n        \"Reducir gastos no esenciales para cubrir la nueva cuota.\"\n      ],\n      \"citas\": [\n        \"F09\"\n      ]\n    }\n  ]\n}",
+        "C4": "{\n  \"recomendaciones\": [\n    {\n      \"variable\": \"ratio_cuota_ingreso\",\n      \"texto\": \"Para mantener una gestión financiera saludable, asegúrate de que tu cuota de deuda no supere el 33% de tu ingreso mensual. Esto incluye solo el pago mínimo de tu tarjeta de crédito. Si tu cuota deuda es mayor, considera postergar el crédito y reducir gastos esenciales.\",\n      \"acciones\": [\n        \"Calcular tu capacidad de pago actual y asegurarte de que no excede el 33% de tu ingreso neto.\",\n        \"Si tu cuota deuda es superior al 33%, posterga el crédito y reducir gastos esenciales.\",\n        \"Revisa regularmente tu ratio de cuota a ingreso para mantenerlo bajo el 33%.\"\n      ],\n      \"citas\": [\n        \"F09\",\n        \"F10\"\n      ]\n    }\n  ]\n}",
+        "C5": "{\n  \"recomendaciones\": [\n    {\n      \"variable\": \"n_otros_creditos\",\n      \"texto\": \"Como tienes tres creditos vigentes, es importante evaluar si es conveniente consolidarlos en un solo credito. Esto ayudará a simplificar tu seguimiento y reducir el costo total de los préstamos.\",\n      \"acciones\": [\n        \"Consultar la opción de consolidación de créditos.\",\n        \"Comparar la tasa de interés del nuevo crédito con el promedio actual de tus créditos.\",\n        \"Consultar a un asesor financiero para evaluar la opción de consolidación.\"\n      ],\n      \"citas\": [\n        \"F08\"\n      ]\n    },\n    {\n      \"variable\": \"atraso_historial\",\n      \"texto\": \"Como tu historial registra atrasos en pagos, es recomendable solicitar una reprogramación de deuda antes de caer en mora. Esto te permitirá extender el plazo de pago y bajar la cuota mensual.\",\n      \"acciones\": [\n        \"Solicitar una reprogramación de deuda con tu proveedor de crédito.\",\n        \"Consultar a un asesor financiero para evaluar las condiciones de la reprogramación.\",\n        \"Comparar las condiciones de la reprogramación con el historial actual de tus pagos.\"\n      ],\n      \"citas\": [\n        \"F11\"\n      ]\n    }\n  ]\n}"
+      }
+    },
+    "llama3.2:3b": {
+      "metricas": {
+        "json_valido": 1.0,
+        "cobertura": 1.0,
+        "factores_presentes": "9 / 9",
+        "citas_validas": 1.0,
+        "sin_fuente_correcto": 1.0,
+        "cifras_inventadas": 2,
+        "determinismo": 0.2,
+        "latencia_media_s": 3.91,
+        "latencia_max_s": 5.04,
+        "apto": false
+      },
+      "evaluacion": [
+        {
+          "json_valido": true,
+          "cobertura_ok": true,
+          "factores": [
+            {
+              "variable": "ratio_cuota_ingreso",
+              "presente": true,
+              "citas": [
+                "F09",
+                "F10"
+              ],
+              "citas_validas": true,
+              "cifras_inventadas": []
+            },
+            {
+              "variable": "n_otros_creditos",
+              "presente": true,
+              "citas": [
+                "F08",
+                "F09"
+              ],
+              "citas_validas": true,
+              "cifras_inventadas": [
+                "3"
+              ]
+            }
+          ]
+        },
+        {
+          "json_valido": true,
+          "cobertura_ok": true,
+          "factores": [
+            {
+              "variable": "atraso_historial",
+              "presente": true,
+              "citas": [
+                "F11",
+                "F12"
+              ],
+              "citas_validas": true,
+              "cifras_inventadas": []
+            }
+          ]
+        },
+        {
+          "json_valido": true,
+          "cobertura_ok": true,
+          "factores": [
+            {
+              "variable": "ratio_deuda_ingreso",
+              "presente": true,
+              "citas": [
+                "F08"
+              ],
+              "citas_validas": true,
+              "cifras_inventadas": []
+            },
+            {
+              "variable": "ratio_monto_ingreso",
+              "presente": true,
+              "citas": [
+                "F10"
+              ],
+              "citas_validas": true,
+              "cifras_inventadas": []
+            },
+            {
+              "variable": "ratio_cuota_ingreso",
+              "presente": true,
+              "citas": [
+                "F09"
+              ],
+              "citas_validas": true,
+              "cifras_inventadas": []
+            }
+          ]
+        },
+        {
+          "json_valido": true,
+          "cobertura_ok": true,
+          "factores": [
+            {
+              "variable": "ratio_cuota_ingreso",
+              "presente": true,
+              "citas": [
+                "F09",
+                "F10"
+              ],
+              "citas_validas": true,
+              "cifras_inventadas": [
+                "12"
+              ]
+            }
+          ]
+        },
+        {
+          "json_valido": true,
+          "cobertura_ok": true,
+          "factores": [
+            {
+              "variable": "n_otros_creditos",
+              "presente": true,
+              "citas": [
+                "F08"
+              ],
+              "citas_validas": true,
+              "cifras_inventadas": []
+            },
+            {
+              "variable": "atraso_historial",
+              "presente": true,
+              "citas": [
+                "F11"
+              ],
+              "citas_validas": true,
+              "cifras_inventadas": []
+            }
+          ]
+        }
+      ],
+      "respuestas": {
+        "C1": "{\n  \"recomendaciones\": [\n    {\n      \"variable\": \"ratio_cuota_ingreso\",\n      \"texto\": \"Tu cuota de credito no debe superar el 30% de tu ingreso mensual neto. Pagar solo el minimo de la tarjeta de credito extiende la deuda por anos y multiplica el monto final pagado.\",\n      \"acciones\": [\n        \"Evalúa tus gastos fijos y ajusta tu presupuesto para reducir tu cuota de credito.\",\n        \"Considera consolidar tus deudas en una sola entidad con una tasa de interés más baja.\",\n        \"Paga solo el minimo de la tarjeta de credito y no reduzca el gasto esencial del hogar.\"\n      ],\n      \"citas\": [\"F09\", \"F10\"]\n    },\n    {\n      \"variable\": \"n_otros_creditos\",\n      \"texto\": \"Considera consolidar tus deudas en una sola entidad con una tasa de interés más baja, ya que tener 3 o mas creditos activos puede ser un senal de alerta de sobreendeudamiento.\",\n      \"acciones\": [\n        \"Evalúa tus opciones de consolidación de deudas y selecciona la que mejor se adapte a tus necesidades.\",\n        \"Considera reducir tus deudas y pagarlas de manera agresiva.\",\n        \"Busca asesoramiento financiero profesional para determinar la mejor estrategia para tus deudas.\"\n      ],\n      \"citas\": [\"F08\", \"F09\"]\n    }\n  ]\n}",
+        "C2": "{\n  \"recomendaciones\": [\n    {\n      \"variable\": \"atraso_historial\",\n      \"texto\": \"Si tu historial registra atrasos en pagos, es recomendable solicitar la reprogramacion de deuda para extender el plazo y bajar la cuota mensual. (F11, F12)\",\n      \"acciones\": [\n        \"Solicita la reprogramacion de deuda antes de caer en mora\",\n        \"Investiga las condiciones ofrecidas después del incumplimiento\",\n        \"Mantén un historial crediticio limpio con pagos puntuales\"\n      ],\n      \"citas\": [\"F11\", \"F12\"]\n    }\n  ]\n}",
+        "C3": "{\n  \"recomendaciones\": [\n    {\n      \"variable\": \"ratio_deuda_ingreso\",\n      \"texto\": \"Mantener una deuda total que no supere el 3 veces tu ingreso mensual es recomendable para evitar problemas de pago y sobreendeudamiento.\",\n      \"acciones\": [\n        \"Evaluar la capacidad de pago antes de asumir una nueva deuda\",\n        \"No reducir el gasto esencial del hogar\",\n        \"Postergar el credito si no se puede cubrir la nueva cuota con holgura\"\n      ],\n      \"citas\": [\"F08\"]\n    },\n    {\n      \"variable\": \"ratio_monto_ingreso\",\n      \"texto\": \"No asumir un prestamo que supere 5 veces tu ingreso mensual, ya que esto puede dificultar el pago y generar problemas de deuda.\",\n      \"acciones\": [\n        \"Evaluar la capacidad de pago antes de asumir una nueva deuda\",\n        \"No reducir el gasto esencial del hogar\",\n        \"Postergar el credito si no se puede cubrir la nueva cuota con holgura\"\n      ],\n      \"citas\": [\"F10\"]\n    },\n    {\n      \"variable\": \"ratio_cuota_ingreso\",\n      \"texto\": \"No pagar más del 30% de tu ingreso mensual en cuotas de deuda, ya que esto puede generar problemas de sobreendeudamiento y prolongar la deuda.\",\n      \"acciones\": [\n        \"Pagar solo el minimo de la tarjeta de credito\",\n        \"Prolongar la deuda pagando solo el minimo\",\n        \"Buscar alternativas de pago más asequibles\"\n      ],\n      \"citas\": [\"F09\"]\n    }\n  ]\n}",
+        "C4": "{\n  \"recomendaciones\": [\n    {\n      \"variable\": \"ratio_cuota_ingreso\",\n      \"texto\": \"Tu cuota de credito no debe superar el 30% de tu ingreso mensual neto para evitar el sobreendeudamiento.\",\n      \"acciones\": [\n        \"Verifica tus gastos fijos y ajusta tu presupuesto si es necesario.\",\n        \"Calcula tu ingreso neto mensual y divide por 12 para obtener tu ingreso anual.\",\n        \"Divide tu ingreso anual por 12 y multiplica por 30 para obtener el monto maximo de tu cuota de credito.\"\n      ],\n      \"citas\": [\"F09\", \"F10\"]\n    }\n  ]\n}",
+        "C5": "{\n  \"recomendaciones\": [\n    {\n      \"variable\": \"n_otros_creditos\",\n      \"texto\": \"Considera consolidar tus 3 creditos vigentes en otras entidades si la tasa resultante es menor al promedio ponderado actual.\",\n      \"acciones\": [\n        \"Evalúa la posibilidad de consolidar tus deudas.\",\n        \"Investiga tasas de interés y condiciones de pago.\",\n        \"Considera solicitar la consolidación antes de caer en mora.\"\n      ],\n      \"citas\": [\"F08\"]\n    },\n    {\n      \"variable\": \"atraso_historial\",\n      \"texto\": \"Si tienes un historial de atrasos en pagos, considera solicitar la reprogramación de deuda para extender el plazo y bajar la cuota mensual.\",\n      \"acciones\": [\n        \"Solicita la reprogramación de deuda antes de caer en mora.\",\n        \"Investiga las condiciones de pago y las tasas de interés.\",\n        \"Considera que las condiciones ofrecidas después del incumplimiento son peores.\"\n      ],\n      \"citas\": [\"F11\"]\n    }\n  ]\n}"
+      }
+    },
+    "phi4-mini": {
+      "metricas": {
+        "json_valido": 1.0,
+        "cobertura": 1.0,
+        "factores_presentes": "9 / 9",
+        "citas_validas": 1.0,
+        "sin_fuente_correcto": 1.0,
+        "cifras_inventadas": 9,
+        "determinismo": 0.2,
+        "latencia_media_s": 12.44,
+        "latencia_max_s": 19.5,
+        "apto": false
+      },
+      "evaluacion": [
+        {
+          "json_valido": true,
+          "cobertura_ok": true,
+          "factores": [
+            {
+              "variable": "ratio_cuota_ingreso",
+              "presente": true,
+              "citas": [
+                "F09",
+                "F10"
+              ],
+              "citas_validas": true,
+              "cifras_inventadas": [
+                "1",
+                "2",
+                "3"
+              ]
+            },
+            {
+              "variable": "n_otros_creditos",
+              "presente": true,
+              "citas": [
+                "F08",
+                "F09"
+              ],
+              "citas_validas": true,
+              "cifras_inventadas": [
+                "1",
+                "2",
+                "3"
+              ]
+            }
+          ]
+        },
+        {
+          "json_valido": true,
+          "cobertura_ok": true,
+          "factores": [
+            {
+              "variable": "atraso_historial",
+              "presente": true,
+              "citas": [
+                "F11",
+                "F12"
+              ],
+              "citas_validas": true,
+              "cifras_inventadas": []
+            }
+          ]
+        },
+        {
+          "json_valido": true,
+          "cobertura_ok": true,
+          "factores": [
+            {
+              "variable": "ratio_deuda_ingreso",
+              "presente": true,
+              "citas": [
+                "F08"
+              ],
+              "citas_validas": true,
+              "cifras_inventadas": []
+            },
+            {
+              "variable": "ratio_monto_ingreso",
+              "presente": true,
+              "citas": [
+                "F10"
+              ],
+              "citas_validas": true,
+              "cifras_inventadas": []
+            },
+            {
+              "variable": "ratio_cuota_ingreso",
+              "presente": true,
+              "citas": [
+                "F09"
+              ],
+              "citas_validas": true,
+              "cifras_inventadas": []
+            }
+          ]
+        },
+        {
+          "json_valido": true,
+          "cobertura_ok": true,
+          "factores": [
+            {
+              "variable": "ratio_cuota_ingreso",
+              "presente": true,
+              "citas": [
+                "F09",
+                "F10"
+              ],
+              "citas_validas": true,
+              "cifras_inventadas": [
+                "1",
+                "2",
+                "3"
+              ]
+            }
+          ]
+        },
+        {
+          "json_valido": true,
+          "cobertura_ok": true,
+          "factores": [
+            {
+              "variable": "n_otros_creditos",
+              "presente": true,
+              "citas": [
+                "F08"
+              ],
+              "citas_validas": true,
+              "cifras_inventadas": []
+            },
+            {
+              "variable": "atraso_historial",
+              "presente": true,
+              "citas": [
+                "F11"
+              ],
+              "citas_validas": true,
+              "cifras_inventadas": []
+            }
+          ]
+        }
+      ],
+      "respuestas": {
+        "C1": "{\n  \"recomendaciones\": [\n    {\n      \"variable\": \"ratio_cuota_ingreso\",\n      \"texto\": \"1. Asegura que tu cuota total de deudas no supere el 30% de tu ingreso mensual neto. 2. Si tu cuota actual es del 38%, considera postergar nuevas deudas o reducir gastos esenciales para cumplir con este umbral. 3. Calcula tu capacidad de pago: ingreso neto menos gastos fijos menos cuotas vigentes. Si no puedes cubrir la nueva cuota con holgura, espera antes de asumir nuevas deudas.\",\n      \"acciones\": [\n        \"Asegura que tu cuota total de deudas no supere el 30% de tu ingreso mensual neto.\",\n        \"Considera postergar nuevas deudas o reducir gastos esenciales para cumplir con este umbral.\",\n        \"Calcula tu capacidad de pago: ingreso neto menos gastos fijos menos cuotas vigentes. Si no puedes cubrir la nueva cuota con holgura, espera antes de asumir nuevas deudas.\"\n      ],\n      \"citas\": [\"F09\", \"F10\"]\n    },\n    {\n      \"variable\": \"n_otros_creditos\",\n      \"texto\": \"1. Evalúa la consolidación de tus 4 deudas activas en distintas entidades para reducir el costo total y facilitar el seguimiento de los vencimientos. 2. Si la tasa resultante de la consolidación es menor al promedio ponderado actual, procede con la consolidación. 3. Mantén el seguimiento de tus deudas para evitar el sobreendeudamiento.\",\n      \"acciones\": [\n        \"Evalúa la consolidación de tus 4 deudas activas en distintas entidades para reducir el costo total y facilitar el seguimiento de los vencimientos.\",\n        \"Si la tasa resultante de la consolidación es menor al promedio ponderado actual, procede con la consolidación.\",\n        \"Mantén el seguimiento de tus deudas para evitar el sobreendeudamiento.\"\n      ],\n      \"citas\": [\"F08\", \"F09\"]\n    }\n  ]\n}",
+        "C2": "{\n  \"recomendaciones\": [\n    {\n      \"variable\": \"atraso_historial\",\n      \"texto\": \"Si tienes un historial de pagos atrasados, es importante solicitar una reprogramación de deuda antes de caer en mora. Esto puede ayudarte a extender el plazo de pago y reducir la cuota mensual. Además, mantener un historial crediticio limpio con pagos puntuales puede mejorar tu acceso a futuros créditos y tasas más favorables. Por lo tanto, prioriza la puntualidad en tus pagos para construir un historial crediticio positivo.\",\n      \"acciones\": [\n        \"Solicita una reprogramación de deuda antes de caer en mora.\",\n        \"Mantén un historial crediticio limpio con pagos puntuales.\"\n      ],\n      \"citas\": [\n        \"F11\",\n        \"F12\"\n      ]\n    }\n  ]\n}",
+        "C3": "{\n  \"recomendaciones\": [\n    {\n      \"variable\": \"ratio_deuda_ingreso\",\n      \"texto\": \"Para mantener un ratio de deuda a ingreso saludable, considera consolidar tus varias deudas en una sola entidad. Esto puede reducir el costo total y facilitar el seguimiento de los vencimientos. Asegúrate de que la tasa resultante sea menor al promedio ponderado actual de tus deudas.\",\n      \"acciones\": [\n        \"Consolidar deudas en una sola entidad\",\n        \"Verificar que la tasa sea menor al promedio actual\"\n      ],\n      \"citas\": [\"F08\"]\n    },\n    {\n      \"variable\": \"ratio_monto_ingreso\",\n      \"texto\": \"Antes de asumir una nueva deuda, calcula tu capacidad de pago. Si tu ingreso neto menos gastos fijos menos cuotas vigentes no cubre la nueva cuota con holgura, es mejor posponer el crédito y no reducir gastos esenciales del hogar.\",\n      \"acciones\": [\n        \"Calcular capacidad de pago\",\n        \"Posponer el crédito si no hay holgura\"\n      ],\n      \"citas\": [\"F10\"]\n    },\n    {\n      \"variable\": \"ratio_cuota_ingreso\",\n      \"texto\": \"Tu cuota total de deudas no debe superar el 30% del ingreso mensual neto. Si supera este umbral, es una señal de alerta de sobreendeudamiento. Pagar solo el mínimo de la tarjeta de crédito extiende la deuda por años y multiplica el monto final pagado.\",\n      \"acciones\": [\n        \"Mantener la cuota total de deudas por debajo del 30% del ingreso mensual neto\",\n        \"Pagar solo el mínimo de la tarjeta de crédito\"\n      ],\n      \"citas\": [\"F09\"]\n    }\n  ]\n}",
+        "C4": "{ \"recomendaciones\": [ { \"variable\": \"ratio_cuota_ingreso\", \"texto\": \"1. Calcula tu capacidad de pago: ingreso neto menos gastos fijos menos cuotas vigentes. Si el resultado no cubre la nueva cuota con holgura, postergar el crédito y no reducir gastos esenciales del hogar. 2. Asegura que tu cuota total de deudas no supere el 30% del ingreso mensual neto para evitar el sobreendeudamiento. 3. Si tu cuota equivale al 33% de tu ingreso mensual, considera reducir gastos no esenciales para cumplir con esta regla.\",\"acciones\": [\"Calcula tu capacidad de pago\", \"Asegura que tu cuota total de deudas no supere el 30% del ingreso mensual neto\", \"Considera reducir gastos no esenciales\"],\"citas\": [\"F09\", \"F10\"] } ] }",
+        "C5": "{\n  \"recomendaciones\": [\n    {\n      \"variable\": \"n_otros_creditos\",\n      \"texto\": \"Considera consolidar tus tres créditos activos en distintas entidades. Esto puede reducir el costo total y facilitar el seguimiento de los vencimientos. Verifica si una sola deuda puede cancelar los otros, asegurándote de que la tasa resultante sea menor al promedio actual de tus créditos.\",\n      \"acciones\": [\n        \"Evalúa la consolidación de tus tres créditos activos.\",\n        \"Verifica si una sola deuda puede cancelar los otros.\"\n      ],\n      \"citas\": [\"F08\"]\n    },\n    {\n      \"variable\": \"atraso_historial\",\n      \"texto\": \"Si tienes un historial de atrasos en pagos, considera solicitar una reprogramación de deuda. Esto puede extender el plazo y bajar la cuota mensual. Solicita esta reprogramación antes de caer en mora, ya que después del incumplimiento las condiciones se vuelven peores y tu historial crediticio se ve afectado negativamente.\",\n      \"acciones\": [\n        \"Solicita una reprogramación de deuda antes de caer en mora.\",\n        \"Extiende el plazo y baja la cuota mensual.\"\n      ],\n      \"citas\": [\"F11\"]\n    }\n  ]\n}"
+      }
+    }
+  },
+  "modelo_elegido": "qwen2.5:3b"
+}
