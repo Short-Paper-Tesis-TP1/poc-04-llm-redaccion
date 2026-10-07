@@ -1,0 +1,44 @@
+==============================================================================
+PoC 04 - REDACCION CON LLM LOCAL (Ollama) | corpus sustituto de la PoC 03
+==============================================================================
+
+[qwen2.5:3b]
+  json_valido            1.000
+  cobertura              0.833
+  factores_presentes     11 / 12
+  citas_validas          0.667
+  sin_fuente_correcto    0.000
+  cifras_inventadas      0
+  determinismo           0.167
+  latencia_media_s       3.790
+  latencia_max_s         5.560
+  apto                   False
+
+[llama3.2:3b]
+  json_valido            0.833
+  cobertura              0.833
+  factores_presentes     10 / 12
+  citas_validas          1.000
+  sin_fuente_correcto    0.333
+  cifras_inventadas      0
+  determinismo           1.000
+  latencia_media_s       4.720
+  latencia_max_s         9.340
+  apto                   False
+
+[phi4-mini]
+  json_valido            1.000
+  cobertura              0.667
+  factores_presentes     10 / 12
+  citas_validas          1.000
+  sin_fuente_correcto    0.500
+  cifras_inventadas      3
+  determinismo           0.333
+  latencia_media_s       8.460
+  latencia_max_s         14.560
+  apto                   False
+
+==============================================================================
+Modelos aptos: ninguno
+Modelo elegido: None
+Guardado: resultado_poc4.json

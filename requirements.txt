@@ -1,0 +1,5 @@
+# Sin dependencias de pip: usa solo la biblioteca estandar de Python 3.12
+# Requiere Ollama instalado (https://ollama.com/download) y los modelos:
+#   ollama pull qwen2.5:3b
+#   ollama pull llama3.2:3b
+#   ollama pull phi4-mini
